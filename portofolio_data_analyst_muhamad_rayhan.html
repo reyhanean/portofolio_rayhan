@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhamad Rayhan | Data Analyst Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#f0fdfa",
+                100: "#ccfbf1",
+                500: "#14b8a6",
+                600: "#0d9488",
+                700: "#0f766e",
+                800: "#115e59",
+                900: "#134e4a",
+                950: "#042f2e",
+              },
+              navy: {
+                800: "#0f172a",
+                900: "#0b0f19",
+                950: "#05070d",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Font & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .glass-card {
+        background: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .glass-card-light {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #2dd4bf 0%, #38bdf8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #1e293b;
+        border-radius: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #0d9488;
+      }
+    </style>
+  </head>
+  <body class="bg-navy-900 text-slate-200 antialiased selection:bg-brand-500 selection:text-white custom-scrollbar">
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-navy-950/80 backdrop-blur-md border-b border-slate-800/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="#hero" class="flex items-center gap-2">
+          <img src="foto_logo.png" alt="Muhamad Rayhan" class="w-9 h-9 rounded-full object-cover border border-brand-500/40 hover:border-brand-500 transition-all" />
+          <span class="text-xl font-bold text-white">Muhamad Rayhan<span class="text-brand-500">.</span></span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+          <a href="#tentang" class="hover:text-brand-500 transition-colors">Tentang</a>
+          <a href="#proyek" class="hover:text-brand-500 transition-colors">Proyek</a>
+          <a href="#keahlian" class="hover:text-brand-500 transition-colors">Keahlian</a>
+          <a href="#pengalaman" class="hover:text-brand-500 transition-colors">Pengalaman</a>
+          <a href="#pendidikan" class="hover:text-brand-500 transition-colors">Pendidikan</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a
+            href="mailto:rayhanrehan20@gmail.com"
+            class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-brand-600 hover:bg-brand-500 text-white transition-all duration-200 shadow-lg shadow-brand-600/20"
+          >
+            <i class="fa-regular fa-envelope"></i> Hubungi Saya
+          </a>
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white p-2" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Nav Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-navy-950 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+        <a href="#tentang" class="block py-2 text-slate-300 hover:text-brand-500">Tentang</a>
+        <a href="#proyek" class="block py-2 text-slate-300 hover:text-brand-500">Proyek</a>
+        <a href="#keahlian" class="block py-2 text-slate-300 hover:text-brand-500">Keahlian</a>
+        <a href="#pengalaman" class="block py-2 text-slate-300 hover:text-brand-500">Pengalaman</a>
+        <a href="#pendidikan" class="block py-2 text-slate-300 hover:text-brand-500">Pendidikan</a>
+        <a href="mailto:rayhanrehan20@gmail.com" class="block py-2 text-brand-500 font-semibold">Hubungi Saya (Email)</a>
+      </div>
+    </header>
+
+    <main class="pt-16">
+      <!-- Hero Section -->
+      <section id="hero" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16 px-4">
+        <!-- Background Glow & Grid -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-6xl mx-auto z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <!-- Hero Left: Photo Placeholder (Vertical) -->
+          <div class="lg:col-span-4 flex justify-center order-2 lg:order-1">
+            <div class="relative group max-w-[280px] w-full">
+              <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-sky-500 rounded-3xl blur opacity-30 group-hover:opacity-75 transition duration-500"></div>
+              <div class="relative aspect-[3/4] rounded-2xl bg-slate-900 border-2 border-slate-700/80 overflow-hidden flex flex-col items-center justify-center text-center p-4 shadow-2xl">
+                <!-- GAMBAR FOTO PROFIL VERTIKAL -->
+                <!-- GANTI URL src DI BAWAH INI DENGAN FOTO VERTIKAL KAMU (MISAL: https://raw.githubusercontent.com/.../foto.jpg) -->
+                <img
+                  src="foto_profil.jpg"
+                  alt="Muhamad Rayhan"
+                  class="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
+                  onerror="this.src = 'https://placehold.co/600x800/0f172a/2dd4bf?text=Foto+Rayhan+(3:4)'"
+                />
+                <div class="absolute bottom-3 left-3 right-3 bg-navy-950/90 backdrop-blur-md p-2.5 rounded-xl border border-slate-800 text-left">
+                  <p class="text-xs font-bold text-white">Muhamad Rayhan</p>
+                  <p class="text-[10px] text-brand-400">Data Analyst / S.Kom</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Right: Intro Text -->
+          <div class="lg:col-span-8 text-center lg:text-left space-y-6 order-1 lg:order-2">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-brand-400 text-xs font-medium tracking-wide">
+              <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+              Ready for Data Analyst Roles
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">Halo, Saya <span class="gradient-text">Muhamad Rayhan</span></h1>
+
+            <p class="text-base sm:text-xl text-slate-300 font-light">Data Analyst | SQL Querying | Power BI & Excel Dashboards | Python</p>
+
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Lulusan S.Kom Teknik Informatika yang berfokus menerjemahkan dataset mentah menjadi <span class="text-slate-200 font-medium">insight bisnis yang bernilai</span> melalui pembersihan data terstruktur, pemodelan data, serta
+              pembuatan dashboard visual interaktif.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+              <a href="#proyek" class="px-5 py-2.5 text-xs sm:text-sm font-semibold rounded-xl bg-brand-600 hover:bg-brand-500 text-white transition-all duration-200 shadow-lg shadow-brand-600/30 flex items-center gap-2">
+                <i class="fa-solid fa-folder-open"></i> Lihat Proyek Saya
+              </a>
+              <a
+                href="https://github.com/reyhanean"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-5 py-2.5 text-xs sm:text-sm font-semibold rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all duration-200 flex items-center gap-2"
+              >
+                <i class="fa-brands fa-github text-base"></i> GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/muhamad-rayhan-182432237"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-5 py-2.5 text-xs sm:text-sm font-semibold rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all duration-200 flex items-center gap-2"
+              >
+                <i class="fa-brands fa-linkedin text-base text-sky-400"></i> LinkedIn
+              </a>
+            </div>
+
+            <!-- Quick Contact Info Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4">
+              <div class="glass-card p-3 rounded-xl flex items-center justify-between sm:justify-start gap-2 border border-slate-800">
+                <div class="flex items-center gap-2 truncate">
+                  <i class="fa-solid fa-envelope text-brand-400 text-xs"></i>
+                  <span class="text-[11px] text-slate-300 truncate">rayhanrehan20@gmail.com</span>
+                </div>
+                <button onclick="copyToClipboard('rayhanrehan20@gmail.com')" class="text-slate-500 hover:text-brand-400 text-xs p-1" title="Salin Email">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+              <div class="glass-card p-3 rounded-xl flex items-center justify-between sm:justify-start gap-2 border border-slate-800">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-phone text-brand-400 text-xs"></i>
+                  <span class="text-[11px] text-slate-300">085810665290</span>
+                </div>
+                <button onclick="copyToClipboard('085810665290')" class="text-slate-500 hover:text-brand-400 text-xs p-1" title="Salin Nomor">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+              <div class="glass-card p-3 rounded-xl flex items-center gap-2 border border-slate-800">
+                <i class="fa-solid fa-location-dot text-brand-400 text-xs"></i>
+                <span class="text-[11px] text-slate-300">Jakarta Selatan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Featured Projects -->
+      <section id="proyek" class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <div class="p-2 rounded-lg bg-brand-500/10 text-brand-400 border border-brand-500/20">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Proyek Analisis Data</h2>
+              </div>
+              <p class="text-sm text-slate-400">Studi kasus riil yang memadukan pembersihan data, eksplorasi, visualisasi dashboard, dan rekomendasi bisnis.</p>
+            </div>
+          </div>
+
+          <!-- Project Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Project 1: Gayanara Power BI -->
+            <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-brand-500/50 transition-all duration-300 group">
+              <div class="space-y-4">
+                <!-- 2 GAMBAR LANDSCAPE PROYEK 1 -->
+                <div class="p-4 bg-slate-950/60 border-b border-slate-800/80 space-y-2">
+                  <div class="grid grid-cols-2 gap-2">
+                    <!-- Gambar 1 Proyek 1 -->
+                    <div class="relative aspect-video rounded-lg overflow-hidden bg-slate-900 border border-slate-800 group/img">
+                      <!-- GANTI URL src DENGAN GAMBAR LANDSCAPE DASHBOARD GAYANARA 1 -->
+                      <img src="dashboard_gayanara.png" alt="Gayanara Power BI Screenshot 1" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300" />
+                    </div>
+                    <!-- Gambar 2 Proyek 1 -->
+                    <div class="relative aspect-video rounded-lg overflow-hidden bg-slate-900 border border-slate-800 group/img">
+                      <!-- GANTI URL src DENGAN GAMBAR LANDSCAPE DASHBOARD GAYANARA 2 -->
+                      <img src="dashboard_gayanara2.png" alt="Gayanara Power BI Screenshot 2" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300" />
+                    </div>
+                  </div>
+                  <p class="text-[10px] text-center text-slate-400"><i class="fa-solid fa-image text-brand-400"></i> Tangkapan Layar Dashboard Power BI</p>
+                </div>
+
+                <div class="px-6 space-y-4">
+                  <div class="flex items-center justify-between">
+                    <span class="px-3 py-1 rounded-full text-[11px] font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20"> Power BI & DAX </span>
+                    <a
+                      href="https://github.com/reyhanean/gayanara_dashboard_powerBI"
+                      target="_blank"
+                      class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-medium transition-all"
+                    >
+                      <i class="fa-brands fa-github text-sm"></i>
+                      <span>GitHub Repository</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-70"></i>
+                    </a>
+                  </div>
+
+                  <h3 class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">Sales & Customer Satisfaction Dashboard - Gayanara</h3>
+
+                  <p class="text-xs text-slate-300 leading-relaxed">Merancang model data terstruktur dan dashboard interaktif Power BI untuk menganalisis tren omzet penjualan toko *fashion* periode Jan 2022 - Feb 2025.</p>
+
+                  <!-- Enhanced Detailed Bullets -->
+                  <div class="space-y-2 pt-2 border-t border-slate-800/80 text-xs text-slate-300">
+                    <div class="flex items-start gap-2">
+                      <i class="fa-solid fa-check text-brand-400 mt-1 text-[10px]"></i>
+                      <span><strong>Data Modeling & DAX:</strong> Menghubungkan 5 tabel berelasi (*One-to-Many*) serta menerapkan rumus DAX <code>CALCULATE</code> & <code>KEEPFILTERS</code> untuk kalkulasi metrik bisnis presisi.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <i class="fa-solid fa-check text-brand-400 mt-1 text-[10px]"></i>
+                      <span
+                        ><strong>Insight Pertumbuhan Omzet:</strong> Mengidentifikasi lonjakan omzet bulanan signifikan dari ±<strong>Rp 10 Juta</strong> (Juni 2022) hingga mencapai puncak ±<strong>Rp 68 Juta</strong> (Februari 2025).</span
+                      >
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <i class="fa-solid fa-check text-brand-400 mt-1 text-[10px]"></i>
+                      <span
+                        ><strong>Temuan & Rekomendasi Bisnis:</strong> Kategori Atasan Wanita berkontribusi 35% terhadap total omzet, namun terdapat tingkat pembatalan/retur pesanan sebesar 16%. Direkomendasikan strategi penawaran paket
+                        <em>bundling</em> atau promosi khusus pada kategori Bawahan.</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 pt-4">
+                <div class="flex flex-wrap gap-1.5 pt-2">
+                  <span class="px-2.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">Power BI</span>
+                  <span class="px-2.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">DAX</span>
+                  <span class="px-2.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">Power Query</span>
+                  <span class="px-2.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">Sales Analytics</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2: Naive Bayes Sentiment Analysis -->
+            <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-brand-500/50 transition-all duration-300 group">
+              <div class="space-y-4">
+                <!-- 2 GAMBAR LANDSCAPE PROYEK 2 -->
+                <div class="p-4 bg-slate-950/60 border-b border-slate-800/80 space-y-2">
+                  <div class="grid grid-cols-2 gap-2">
+                    <!-- Gambar 1 Proyek 2 -->
+                    <div class="relative aspect-video rounded-lg overflow-hidden bg-slate-900 border border-slate-800 group/img">
+                      <!-- GANTI URL src DENGAN GAMBAR LANDSCAPE FLASK APP 1 -->
+                      <img src="dashboard_ramayana.png" alt="Flask Web App Screenshot 1" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300" />
+                    </div>
+                    <!-- Gambar 2 Proyek 2 -->
+                    <div class="relative aspect-video rounded-lg overflow-hidden bg-slate-900 border border-slate-800 group/img">
+                      <!-- GANTI URL src DENGAN GAMBAR LANDSCAPE FLASK APP 2 -->
+                      <img src="dashboard_ramayana2.png" alt="Flask Web App Screenshot 2" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300" />
+                    </div>
+                  </div>
+                  <p class="text-[10px] text-center text-slate-400"><i class="fa-solid fa-image text-brand-400"></i> Tangkapan Layar Web Flask & Sentimen</p>
+                </div>
+
+                <div class="px-6 space-y-4">
+                  <div class="flex items-center justify-between">
+                    <span class="px-3 py-1 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"> Python NLP & Flask </span>
+                    <a
+                      href="https://github.com/reyhanean/sentiment-analysis-google-maps.git"
+                      target="_blank"
+                      class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-medium transition-all"
+                    >
+                      <i class="fa-brands fa-github text-sm"></i>
+                      <span>GitHub Repository</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-70"></i>
+                    </a>
+                  </div>
+
+                  <h3 class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">Analisis Sentimen Google Maps dengan Naive Bayes (Tugas Akhir)</h3>
+
+                  <p class="text-xs text-slate-300 leading-relaxed">Penelitian analisis kepuasan pelanggan ritel Ramayana Pasar Minggu berbasis ulasan Google Maps menggunakan teknik Machine Learning dan aplikasi web interaktif.</p>
+
+                  <!-- Enhanced Detailed Bullets -->
+                  <div class="space-y-2 pt-2 border-t border-slate-800/80 text-xs text-slate-300">
+                    <div class="flex items-start gap-2">
+                      <i class="fa-solid fa-check text-brand-400 mt-1 text-[10px]"></i>
+                      <span><strong>Preprocessing & Pipeline:</strong> Memproses 3.020 data ulasan Google Maps (menghasilkan 1.140 data bersih), menggunakan ekstraksi fitur TF-IDF dan penyeimbangan kelas <em>oversampling</em>.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <i class="fa-solid fa-check text-brand-400 mt-1 text-[10px]"></i>
+                      <span><strong>Akurasi Model 71,63%:</strong> Mengimplementasikan algoritma <em>Complement Naive Bayes</em> yang diuji mampu mengklasifikasikan sentimen positif, netral, dan negatif secara akurat.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <i class="fa-solid fa-check text-brand-400 mt-1 text-[10px]"></i>
+                      <span><strong>Aplikasi Web Flask:</strong> Membangun dashboard analitik web berbasis Flask yang mampu memprediksi sentimen teks ulasan baru secara real-time serta menghasilkan ringkasan laporan PDF otomatis.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 pt-4">
+                <div class="flex flex-wrap gap-1.5 pt-2">
+                  <span class="px-2.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">Python</span>
+                  <span class="px-2.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">Naive Bayes</span>
+                  <span class="px-2.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">TF-IDF</span>
+                  <span class="px-2.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">Flask Web</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: Excel Inventory Dashboard -->
+            <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-brand-500/50 transition-all duration-300 group">
+              <div class="space-y-4">
+                <!-- 2 GAMBAR LANDSCAPE PROYEK 3 -->
+                <div class="p-4 bg-slate-950/60 border-b border-slate-800/80 space-y-2">
+                  <div class="grid grid-cols-2 gap-2">
+                    <!-- Gambar 1 Proyek 3 -->
+                    <div class="relative aspect-video rounded-lg overflow-hidden bg-slate-900 border border-slate-800 group/img">
+                      <!-- GANTI URL src DENGAN GAMBAR LANDSCAPE EXCEL DASHBOARD 1 -->
+                      <img src="dashboard_inventory_excel.png" alt="Excel Inventory Dashboard Screenshot 1" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300" />
+                    </div>
+                    <!-- Gambar 2 Proyek 3 -->
+                    <div class="relative aspect-video rounded-lg overflow-hidden bg-slate-900 border border-slate-800 group/img">
+                      <!-- GANTI URL src DENGAN GAMBAR LANDSCAPE EXCEL DASHBOARD 2 -->
+                      <img src="pivot_tabel_inventory.png" alt="Excel Inventory Dashboard Screenshot 2" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300" />
+                    </div>
+                  </div>
+                  <p class="text-[10px] text-center text-slate-400"><i class="fa-solid fa-image text-brand-400"></i> Tangkapan Layar Dashboard Excel & KPI</p>
+                </div>
+
+                <div class="px-6 space-y-4">
+                  <div class="flex items-center justify-between">
+                    <span class="px-3 py-1 rounded-full text-[11px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20"> Excel Dashboard </span>
+                    <a
+                      href="https://github.com/reyhanean/dashboard-inventori-excel.git"
+                      target="_blank"
+                      class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-medium transition-all"
+                    >
+                      <i class="fa-brands fa-github text-sm"></i>
+                      <span>GitHub Repository</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-70"></i>
+                    </a>
+                  </div>
+
+                  <h3 class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">Dashboard Inventori Produk & KPI Stok (Excel)</h3>
+
+                  <p class="text-xs text-slate-300 leading-relaxed">Pengolahan data stok produk pakaian secara komprehensif di Microsoft Excel untuk memantau kesehatan inventori dan mempercepat pengambilan keputusan logistik.</p>
+
+                  <!-- Enhanced Detailed Bullets -->
+                  <div class="space-y-2 pt-2 border-t border-slate-800/80 text-xs text-slate-300">
+                    <div class="flex items-start gap-2">
+                      <i class="fa-solid fa-check text-brand-400 mt-1 text-[10px]"></i>
+                      <span><strong>Data Cleansing:</strong> Membersihkan 300 baris dataset produk pakaian, menyatukan format kategori, konversi rating ke nilai numerik, serta eliminasi baris kosong.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <i class="fa-solid fa-check text-brand-400 mt-1 text-[10px]"></i>
+                      <span><strong>Dashboard 5 KPI utama:</strong> Menampilkan Total Produk, Total Stok, Rata-rata Rating, Nilai Inventori (±<strong>Rp 9,03 Miliar</strong>), dan alert Stok Menipis secara otomatis.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <i class="fa-solid fa-check text-brand-400 mt-1 text-[10px]"></i>
+                      <span><strong>Manajemen Risiko Inventori:</strong> Mengidentifikasi 46 dari 300 produk (sekitar 15%) berada pada kondisi kritis/hampir habis, di mana kategori *Dress* paling terdampak (6 dari 11 produk habis).</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 pt-4">
+                <div class="flex flex-wrap gap-1.5 pt-2">
+                  <span class="px-2.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">MS Excel</span>
+                  <span class="px-2.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">Pivot Table</span>
+                  <span class="px-2.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">Interactive Slicer</span>
+                  <span class="px-2.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">KPI Cards</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Skills & Tech Stack -->
+      <section id="keahlian" class="py-16 px-4 bg-navy-950/60 border-y border-slate-800/50">
+        <div class="max-w-5xl mx-auto">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="p-2 rounded-lg bg-brand-500/10 text-brand-400 border border-brand-500/20">
+              <i class="fa-solid fa-code text-base"></i>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">Keahlian Teknis & Tools</h2>
+          </div>
+
+          <!-- Skill Categories -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Skill 1 -->
+            <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
+              <div class="flex items-center gap-2.5 text-brand-400 font-semibold text-sm">
+                <i class="fa-solid fa-database text-lg"></i>
+                <span>SQL & Database</span>
+              </div>
+              <ul class="text-xs text-slate-300 space-y-2">
+                <li class="flex items-center justify-between">
+                  <span>MySQL / Relational DB</span>
+                  <span class="text-slate-500">Tingkat Lanjut</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>DuckDB</span>
+                  <span class="text-slate-500">Dasar/Praktik</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>Data Cleaning & Joins</span>
+                  <span class="text-slate-500">Menguasai</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>Aggregate & String Functions</span>
+                  <span class="text-slate-500">Menguasai</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Skill 2 -->
+            <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
+              <div class="flex items-center gap-2.5 text-brand-400 font-semibold text-sm">
+                <i class="fa-solid fa-chart-pie text-lg"></i>
+                <span>Visualisasi Data</span>
+              </div>
+              <ul class="text-xs text-slate-300 space-y-2">
+                <li class="flex items-center justify-between">
+                  <span>Microsoft Excel</span>
+                  <span class="text-slate-500">Pivot, Slicer, Chart</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>Power BI</span>
+                  <span class="text-slate-500">DAX, Power Query</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>KPI Dashboard</span>
+                  <span class="text-slate-500">Menguasai</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>Interactive Reports</span>
+                  <span class="text-slate-500">Menguasai</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Skill 3 -->
+            <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
+              <div class="flex items-center gap-2.5 text-brand-400 font-semibold text-sm">
+                <i class="fa-brands fa-python text-lg"></i>
+                <span>Pemrograman</span>
+              </div>
+              <ul class="text-xs text-slate-300 space-y-2">
+                <li class="flex items-center justify-between">
+                  <span>Python</span>
+                  <span class="text-slate-500">NLP, Data Preprocessing</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>Flask Framework</span>
+                  <span class="text-slate-500">Web App Dasar</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>Java (NetBeans)</span>
+                  <span class="text-slate-500">Dasar Pengembang</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>Command Line / Git</span>
+                  <span class="text-slate-500">Terbiasa</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Skill 4 -->
+            <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
+              <div class="flex items-center gap-2.5 text-brand-400 font-semibold text-sm">
+                <i class="fa-solid fa-brain text-lg"></i>
+                <span>Analisis & Soft Skills</span>
+              </div>
+              <ul class="text-xs text-slate-300 space-y-2">
+                <li class="flex items-center justify-between">
+                  <span>Sentiment Analysis</span>
+                  <span class="text-slate-500">Naive Bayes</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>Analytical Thinking</span>
+                  <span class="text-slate-500">Tinggi</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>Troubleshooting & Networking</span>
+                  <span class="text-slate-500">Latar Belakang TKJ</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>Bahasa Indonesia & Inggris</span>
+                  <span class="text-slate-500">Native / Inter.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Pengalaman Kerja & PKL -->
+      <section id="pengalaman" class="py-16 px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="p-2 rounded-lg bg-brand-500/10 text-brand-400 border border-brand-500/20">
+              <i class="fa-solid fa-briefcase text-base"></i>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">Pengalaman Kerja</h2>
+          </div>
+
+          <div class="relative border-l-2 border-slate-800 ml-3 space-y-8 pl-6 sm:pl-8">
+            <!-- Experience 1 -->
+            <div class="relative group">
+              <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-brand-500 border-4 border-navy-900 group-hover:scale-125 transition-transform"></div>
+              <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <div>
+                    <h3 class="text-base font-bold text-white">Application Developer (Magang)</h3>
+                    <p class="text-xs text-brand-400 font-medium">PT Toyosindo | Jakarta</p>
+                  </div>
+                  <span class="text-[11px] font-medium text-slate-400 bg-slate-800/80 px-3 py-1 rounded-full border border-slate-700 w-fit"> Agustus 2025 – Januari 2026 </span>
+                </div>
+                <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside leading-relaxed">
+                  <span>Mengembangkan aplikasi pengelolaan data karyawan berbasis dekstop menggunakan Java (NetBeans).</span>
+                  <span>Mengelola dan menyimpan struktur data karyawan secara aman menggunakan basis data relational MySQL.</span>
+                  <span>Melakukan pengujian rutin sistem (testing) dan perbaikan bug/error untuk memastikan efisiensi alur kerja pengolahan data.</span>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="relative group">
+              <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-navy-900 group-hover:scale-125 transition-transform"></div>
+              <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <div>
+                    <h3 class="text-base font-bold text-white">IT Network Support (Praktik Kerja Lapangan)</h3>
+                    <p class="text-xs text-sky-400 font-medium">PT Indonesia Comnets Plus (ICON+) | Jakarta Selatan</p>
+                  </div>
+                  <span class="text-[11px] font-medium text-slate-400 bg-slate-800/80 px-3 py-1 rounded-full border border-slate-700 w-fit"> Februari 2021 – Oktober 2021 </span>
+                </div>
+                <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside leading-relaxed">
+                  <span>Memantau kestabilan jaringan perusahaan serta mendokumentasikan topologi jaringan dan alokasi IP address secara rapi.</span>
+                  <span>Mengonfigurasi router dan switch MikroTik (IP address, subnetting, VLAN) untuk kebutuhan operasional.</span>
+                  <span>Melakukan perawatan, instalasi kabel LAN, dan troubleshooting jaringan komputer perusahaan.</span>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Pendidikan & Sertifikasi -->
+      <section id="pendidikan" class="py-16 px-4 bg-navy-950/60 border-t border-slate-800/50">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Education Column -->
+            <div class="space-y-6">
+              <div class="flex items-center gap-3">
+                <div class="p-2 rounded-lg bg-brand-500/10 text-brand-400 border border-brand-500/20">
+                  <i class="fa-solid fa-graduation-cap text-base"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">Pendidikan</h2>
+              </div>
+
+              <div class="space-y-4">
+                <!-- Higher Ed -->
+                <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-2">
+                  <div class="flex justify-between items-start">
+                    <h3 class="text-sm font-bold text-white">Universitas Indraprasta PGRI (UNINDRA)</h3>
+                    <span class="text-[10px] bg-brand-500/20 text-brand-300 px-2.5 py-0.5 rounded-full border border-brand-500/30">2022 – 2026</span>
+                  </div>
+                  <p class="text-xs text-slate-300">S.Kom, Teknik Informatika | <strong>IPK 3,34 / 4,00</strong></p>
+                  <p class="text-[11px] text-slate-400">Fokus pada pemrograman, logika komputasi, dan analisis data (Tugas Akhir Machine Learning).</p>
+                </div>
+
+                <!-- High School -->
+                <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-2">
+                  <div class="flex justify-between items-start">
+                    <h3 class="text-sm font-bold text-white">SMK Cyber Media</h3>
+                    <span class="text-[10px] bg-slate-800 text-slate-400 px-2.5 py-0.5 rounded-full border border-slate-700">2019 – 2022</span>
+                  </div>
+                  <p class="text-xs text-slate-300">Teknik Komputer Jaringan (TKJ)</p>
+                  <p class="text-[11px] text-slate-400">Memberikan fondasi pemahaman hardware, sistem operasi, dan troubleshooting logika.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Certifications Column -->
+            <div class="space-y-6">
+              <div class="flex items-center gap-3">
+                <div class="p-2 rounded-lg bg-brand-500/10 text-brand-400 border border-brand-500/20">
+                  <i class="fa-solid fa-certificate text-base"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">Sertifikat & Pelatihan</h2>
+              </div>
+
+              <div class="space-y-4">
+                <!-- Cert 1 -->
+                <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-2 flex items-start gap-3">
+                  <div class="p-2 bg-brand-600/20 text-brand-400 rounded-lg mt-0.5">
+                    <i class="fa-solid fa-award"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-sm font-bold text-white">SQL 101 – NgulikData (2026)</h3>
+                    <p class="text-xs text-slate-300">Memperoleh Lencana Resmi <em>"Tamat: SQL 101"</em></p>
+                    <p class="text-[11px] text-slate-400">Praktik penulisan kueri SQL, pengolahan database relational, dan analisis dataset dengan DuckDB.</p>
+                  </div>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-2 flex items-start gap-3">
+                  <div class="p-2 bg-brand-600/20 text-brand-400 rounded-lg mt-0.5">
+                    <i class="fa-solid fa-file-excel"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-sm font-bold text-white">Portofolio XL-Test (Excel) – belajarexcel.id (2026)</h3>
+                    <p class="text-xs text-slate-300">Sertifikasi Praktik Pengolahan Excel</p>
+                    <p class="text-[11px] text-slate-400">Pengujian pemahaman fungsi tingkat lanjut, pembersihan data, serta pembentukan laporan visual Excel.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 border-t border-slate-800/80 py-8 text-center text-xs text-slate-500 space-y-3">
+      <div class="flex items-center justify-center gap-4">
+        <a href="https://github.com/reyhanean" target="_blank" class="text-slate-400 hover:text-brand-400 transition-colors">
+          <i class="fa-brands fa-github text-lg"></i>
+        </a>
+        <a href="https://linkedin.com/in/muhamad-rayhan-182432237" target="_blank" class="text-slate-400 hover:text-brand-400 transition-colors">
+          <i class="fa-brands fa-linkedin text-lg"></i>
+        </a>
+        <a href="mailto:rayhanrehan20@gmail.com" class="text-slate-400 hover:text-brand-400 transition-colors">
+          <i class="fa-regular fa-envelope text-lg"></i>
+        </a>
+      </div>
+      <p>© 2026 Muhamad Rayhan. All rights reserved. | Portofolio Data Analyst</p>
+    </footer>
+
+    <!-- JavaScript Interaction -->
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close menu on nav click
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Copy contact functionality
+      function copyToClipboard(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text);
+        } else {
+          const textArea = document.createElement("textarea");
+          textArea.value = text;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textArea);
+        }
+        showToast(`Berhasil menyalin: ${text}`);
+      }
+
+      function showToast(message) {
+        const toast = document.getElementById("toast");
+        const toastMsg = document.getElementById("toast-message");
+        toastMsg.textContent = message;
+        toast.classList.remove("hidden");
+        setTimeout(() => {
+          toast.classList.add("hidden");
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
